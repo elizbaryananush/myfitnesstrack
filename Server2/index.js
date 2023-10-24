@@ -89,3 +89,7 @@ app.get('/api/liked', async (req, res) => {
         res.status(400).send({ massage: err })
     }
 })
+
+app.get('/' , (req , res) => {
+    res.json('hello')
+})
