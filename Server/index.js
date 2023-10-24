@@ -12,7 +12,13 @@ const secret = 'iiiif you got a girlfriend ,  im jelause of her , but if youre s
 const app = express()
 app.use(compression())
 app.use(express.json())
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(cookieParser())
 
 mongoose.connect('mongodb://localhost:27017/full_stack')

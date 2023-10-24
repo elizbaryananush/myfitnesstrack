@@ -7,7 +7,13 @@ const { default: mongoose } = require('mongoose')
 
 app.use(compression())
 app.use(express.json())
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 app.listen(8000, () => {
     console.log('Server listen to port 8000 ...')
