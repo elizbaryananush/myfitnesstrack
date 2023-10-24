@@ -14,7 +14,7 @@ function Workouts() {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch('http://localhost:8000/api/getWorkouts', {
+      const response = await fetch('https://myfitnesstrack-server2.vercel.app/api/getWorkouts', {
         method: 'GET',
       })
 
@@ -26,7 +26,7 @@ function Workouts() {
   }, [])
 
   const like = async (id) => {
-    const response = await fetch('http://localhost:8000/api/like', {
+    const response = await fetch('https://myfitnesstrack-server2.vercel.app/api/like', {
       method: 'POST',
       body: JSON.stringify({
         id: id,

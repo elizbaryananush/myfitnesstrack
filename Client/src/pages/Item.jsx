@@ -40,7 +40,7 @@ function Item() {
         const getData = async () => {
 
             try {
-                const response = await fetch('http://localhost:8000/api/getItem', {
+                const response = await fetch('https://myfitnesstrack-server2.vercel.app/https://myfitnesstrack-server2.vercel.app/api/getItem', {
                     method: 'POST',
                     body: JSON.stringify({
                         id: id,
@@ -60,7 +60,7 @@ function Item() {
     }, [])
 
     const like = async (id) => {
-        const response = await fetch('http://localhost:8000/api/like', {
+        const response = await fetch('https://myfitnesstrack-server2.vercel.app/api/like', {
             method: 'POST',
             body: JSON.stringify({
                 id: id,

@@ -10,7 +10,7 @@ function Post() {
 
     async function send(e) {
         e.preventDefault()
-        const response = await fetch('http://localhost:8000/api/workouts', {
+        const response = await fetch('https://myfitnesstrack-server2.vercel.app/api/workouts', {
             method: 'POST',
             body: JSON.stringify({
                 link: link,

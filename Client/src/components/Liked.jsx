@@ -5,7 +5,7 @@ function Liked() {
     const [genre, setgenre] = useState('all')
 
     const getData = async () => {
-        const response = await fetch('http://localhost:8000/api/liked', {
+        const response = await fetch('https://myfitnesstrack-server2.vercel.app/api/liked', {
             method: 'GET',
         })
 
