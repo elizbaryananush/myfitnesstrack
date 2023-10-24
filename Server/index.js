@@ -110,3 +110,7 @@ app.post('/api/info', async (req, res) => {
 app.post('/logout' , (req,res) => {
     res.cookie('token' , '' ).json('ok')
 })
+
+app.get('/' , (req , res) => {
+    res.json('hello')
+})
