@@ -21,7 +21,7 @@ app.use(cors(
 ));
 app.use(cookieParser())
 
-mongoose.connect('mongodb://localhost:27017/full_stack')
+mongoose.connect('mongodb+srv://test:$2b$10$A78iRDTJ3RK/dGcSUZELJ.E6iSqSmKqrCOBbVsqXzxbNKJsFJAVFu@cluster.ys0ibxc.mongodb.net/?retryWrites=true&w=majority')
 
 app.listen(2800, () => {
     console.log('Server started on port 2800...');
