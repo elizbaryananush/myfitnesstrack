@@ -53,11 +53,11 @@ app.post('/api/login', async (req, res) => {
             console.log('User found');
         } else {
             console.log('No matching account');
-            res.status(400).json('no matching account');
+            return res.status(400).json('no matching account');
         }
     } catch (err) {
         console.error(err);
-        res.status(500).json('Internal Server Error');
+        return res.status(500).json('Internal Server Error');
     }
 });
 
