@@ -48,7 +48,7 @@ app.post('/api/login', async (req, res) => {
     try {
         console.log('Login route entered');
 
-        const user = await User.findOne({ username: req.body.username });
+        const user = User.findOne({ username: req.body.username });
         if (user) {
             console.log('User found');
         } else {
