@@ -80,22 +80,23 @@ app.post('/api/like', async (req, res) => {
 
 app.get('/api/liked', async (req, res) => {
     try {
-        const post = await Painting.find({ liked: true })
-
-        if (post) {
-            res.status(200).send(post)
+        const post = await Painting.find({ liked: true });
+        if (post.length === 0) {
+            res.status(404).send({ message: 'Not Found' });
         } else {
-            res.status(404).send({ massage: 'not found' })
+            res.status(200).send(post);
         }
     } catch (err) {
-        res.status(400).send({ massage: err })
+        console.error(err);
+        res.status(500).send({ message: 'Internal Server Error' });
     }
-})
+});
 
-app.get('/' , (req , res) => {
+
+app.get('/', (req, res) => {
     res.json('hello')
 })
 
-app.get('/test' , (req , res) => {
+app.get('/test', (req, res) => {
     res.json('hello2')
 })
