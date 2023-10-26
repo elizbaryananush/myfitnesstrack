@@ -19,7 +19,8 @@ app.listen(8000, () => {
     console.log('Server listen to port 8000 ...')
 })
 
-mongoose.connect('mongodb+srv://test:$2b$10$A78iRDTJ3RK/dGcSUZELJ.E6iSqSmKqrCOBbVsqXzxbNKJsFJAVFu@cluster.ys0ibxc.mongodb.net/?retryWrites=true&w=majority')
+// mongoose.connect('mongodb://localhost:27017/full_stack')
+mongoose.connect('mongodb+srv://test:wwwwww@cluster.ys0ibxc.mongodb.net/?retryWrites=true&w=majority')
 
 app.post('/api/workouts', async (req, res) => {
     try {
