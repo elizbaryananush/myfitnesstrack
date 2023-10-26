@@ -19,7 +19,7 @@ app.use(cors({
 }));
 app.use(cookieParser())
 
-mongoose.connect('mongodb+srv://test:wwwwww@cluster.ys0ibxc.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://test:wwwwww@cluster.ys0ibxc.mongodb.net/fullstack?retryWrites=true&w=majority');
 
 app.listen(2800, () => {
     console.log('Server started on port 2800...');
@@ -51,6 +51,7 @@ app.post('/api/login', async (req, res) => {
         const user = User.findOne({ username: req.body.username });
         if (user) {
             console.log('User found');
+            return res.json(`You're loged in`)
         } else {
             console.log('No matching account');
             return res.status(400).json('no matching account');
