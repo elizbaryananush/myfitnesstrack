@@ -18,7 +18,7 @@ function SignIn() {
 
     async function register(e) {
         e.preventDefault()
-        const response = await fetch('http://localhost:2800/api/register', {
+        const response = await fetch('https://myfitnesstrack-server1.vercel.app/api/register', {
             body: JSON.stringify({
                 username,
                 password,
@@ -46,7 +46,7 @@ function SignIn() {
     async function login(e) {
         e.preventDefault()
 
-        const response = await fetch('http://localhost:2800/api/login', {
+        const response = await fetch('https://myfitnesstrack-server1.vercel.app/api/login', {
             method: 'POST',
             body: JSON.stringify({
                 username,
