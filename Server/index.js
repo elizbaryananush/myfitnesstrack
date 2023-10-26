@@ -45,23 +45,22 @@ app.post('/api/register', async (req, res) => {
 })
 
 app.post('/api/login', async (req, res) => {
-    const user = await User.findOne({ username: req.body.username })
-    if (user) {
+    try {
+        console.log('Login route entered');
 
-        const status = bcrypt.compareSync(req.body.password, user.password)
-        if (status) {
-
-            jwt.sign({ username: req.body.username, id: user._id }, secret, {}, (err, token) => {
-                if (err) throw err;
-                res.cookie('token', token).json('ok')
-            })
+        const user = await User.findOne({ username: req.body.username });
+        if (user) {
+            console.log('User found');
         } else {
-            res.status(400).json('wrong credentials')
+            console.log('No matching account');
+            res.status(400).json('no matching account');
         }
-    } else {
-        res.status(400).json('no matching account')
+    } catch (err) {
+        console.error(err);
+        res.status(500).json('Internal Server Error');
     }
-})
+});
+
 
 app.get('/api/profile', (req, res) => {
     const { token } = req.cookies;
