@@ -13,7 +13,7 @@ const app = express()
 app.use(compression())
 app.use(express.json())
 app.use(cors({
-    origin: ["https://myfitnesstrack-client.vercel.app"],
+    origin: ["https://myfitnesstrack-client.vercel.app" , "https://myfitnesstrack-server1.vercel.app/api/login"],
     methods: ["POST", "GET"],
     credentials: true
 }));
