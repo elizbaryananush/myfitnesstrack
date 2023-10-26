@@ -50,7 +50,7 @@ function MyAcc() {
 
 
   async function getData() {
-    const response = await fetch('https://myfitnesstrack-server1.vercel.app/api/profile', {
+    const response = await fetch('https://myfitnesstrack-server1.onrender.com/api/profile', {
       credentials: 'include'
     })
 
@@ -63,7 +63,7 @@ function MyAcc() {
 
   const getInfo = async (height3, weight3) => {
     if (username !== null && height3 === true) {
-      const info = await fetch('https://myfitnesstrack-server1.vercel.app/api/info', {
+      const info = await fetch('https://myfitnesstrack-server1.onrender.com/api/info', {
         method: 'POST',
         body: JSON.stringify({
           username: username,
@@ -80,7 +80,7 @@ function MyAcc() {
       }
     }
     else if (username !== null && weight3 === true) {
-      const info = await fetch('https://myfitnesstrack-server1.vercel.app/api/info', {
+      const info = await fetch('https://myfitnesstrack-server1.onrender.com/api/info', {
         method: 'POST',
         body: JSON.stringify({
           username: username,
@@ -98,7 +98,7 @@ function MyAcc() {
 
     }
     else {
-      const info = await fetch('https://myfitnesstrack-server1.vercel.app/api/info', {
+      const info = await fetch('https://myfitnesstrack-server1.onrender.com/api/info', {
         method: 'POST',
         body: JSON.stringify({
           username: username,
