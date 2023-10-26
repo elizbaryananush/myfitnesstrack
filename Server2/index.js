@@ -60,6 +60,7 @@ app.post('/api/getItem', async (req, res) => {
 })
 
 app.post('/api/like', async (req, res) => {
+    res.json('lsdkfkj')
     try {
         const post = await Painting.findOne({ _id: req.body.id });
 
