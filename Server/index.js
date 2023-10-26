@@ -14,7 +14,7 @@ app.use(compression())
 app.use(express.json())
 app.use(cors(
     {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
+        origin: ["https://deploy-mern-frontend.vercel.app" , "https://myfitnesstrack-server1.vercel.app/api/login"],
         methods: ["POST", "GET"],
         credentials: true
     }

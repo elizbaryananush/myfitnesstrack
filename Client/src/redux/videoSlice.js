@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchData = createAsyncThunk('posts/fetchData', async () => {
-    const response = await fetch('https://myfitnesstrack-server2.vercel.app/api/getWorkouts', {
+    const response = await fetch('https://myfitnesstrack-server2-genabmqwa-elizbaryananush.vercel.app/api/getWorkouts', {
         method: 'GET',
     });
     return await response.json();
