@@ -12,13 +12,11 @@ const secret = 'iiiif you got a girlfriend ,  im jelause of her , but if youre s
 const app = express()
 app.use(compression())
 app.use(express.json())
-app.use(cors(
-    {
-        origin: ["https://deploy-mern-frontend.vercel.app" , "https://myfitnesstrack-server1.vercel.app/api/login"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.use(cors({
+    origin: ["https://myfitnesstrack-client.vercel.app", "https://myfitnesstrack-server1.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+}));
 app.use(cookieParser())
 
 mongoose.connect('mongodb+srv://test:wwwwww@cluster.ys0ibxc.mongodb.net/?retryWrites=true&w=majority')
@@ -32,7 +30,7 @@ app.post('/api/register', async (req, res) => {
     try {
         await User.create({
             username: req.body.username,
-            fullname: req.body.fullname, 
+            fullname: req.body.fullname,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, salt),
             goal: req.body.goal,
@@ -66,7 +64,7 @@ app.post('/api/login', async (req, res) => {
 })
 
 app.get('/api/profile', (req, res) => {
-    const { token } = req.cookies; 
+    const { token } = req.cookies;
 
     if (token && token !== '') {
         jwt.verify(token, secret, {}, async (err, info) => {
@@ -100,17 +98,17 @@ app.post('/api/info', async (req, res) => {
             res.json(user)
         } catch (err) {
             res.json(err)
-        } 
+        }
     } else {
         res.json(user)
     }
 
 })
 
-app.post('/logout' , (req,res) => {
-    res.cookie('token' , '' ).json('ok')
+app.post('/logout', (req, res) => {
+    res.cookie('token', '').json('ok')
 })
 
-app.get('/' , (req , res) => {
+app.get('/', (req, res) => {
     res.json('hello')
 })
