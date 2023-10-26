@@ -17,7 +17,7 @@ function Navbar() {
 
     const [loged, setLoged] = useState()
     async function getData() {
-        const response = await fetch('https://myfitnesstrack-server1-cjqof66lh-elizbaryananush.vercel.app/api/profile', {
+        const response = await fetch('https://myfitnesstrack-server1.vercel.app/api/profile', {
             credentials: 'include'
         })
 
