@@ -49,8 +49,9 @@ app.post('/api/login', async (req, res) => {
         console.log('Login route entered');
 
         const user = User.findOne({ username: req.body.username });
+
         if (user) {
-            console.log('User found');
+            console.log(user);
             return res.json(`You're loged in`)
         } else {
             console.log('No matching account');
